@@ -19,6 +19,7 @@ elif Character_Name == 'Evil' :
 Classes = ["Choose your class","1 for the Drunkered. A lighthearted warrior, loves to sing, has 200% Blood alcohol level, also mutters that back then the alcohol they drank was %20000 pure alcohol, has random twiches, weapon of choice: beer mug. Stats: 6atk, 3def, 25hp, 6spd" , "2 for the Paladin. A brave and mighty warrior, does leg day. his abs have abs, although he is incredibly stupid. weapon of choice: Longsword, and shield. Stats: 5atk, 5def, 27hp, 3spd" , "3 for Elf. A boastful high-class hero, bathes in caviar and thinks he's better than you, and is also kind of a D#&%. weapon of choice: longbow. Stats: 8atk, 2def, 24hp, 6spd" , "4 for mage. Super old and super mean also hates people. weapon of choice: wand, and book of spells. Stats: 10atk, 0def, 25hp, 6spd" , "5 for Dwarf. his beard is longer than his hammer, even his wife has a beard. weapon of choice: warhammer. Stats: 2atk, 8def, 28hp, 2spd" , " 6 for Monk. never talks ever. he doesn't eat. he doesn't sleep. he doesn't even use the bathroom. weapon of choice: bare hands. Stats: 7atk, 3def, 24hp, 7spd" , "7 for pirate. A swash buckling, wife stealing, scoundrel of a man, randomly prays to jack sparrow. weapon of choice: scimitar, flint-lock pistol. Stats: 6atk, 3def, 25hp, 6spd" , " 8 for Viking. before he kills something he always yells for odin, always mutters that if you start trying to baptize him he'll swing his axe down on you. weapon of choice: hand axe, short sword. Stats: 7atk, 3def, 25hp, 5spd" , "9 for Samurai. If you utter the word ninja he will kill you. the only way to get him to stop bugging you is to sho gun. weapon of choice: katana. Stats 7atk, 4def, 25hp, 4spd" , "10 for Assassin, not much is known about him. weapon of choice: Hidden blade. Stats: 9atk, 0def, 23hp, 10spd"]
 #line 10-61 is how the computer decides what class you are, it takes a number, then assigns you stats
 clear()
+money = 30
 Weapons = ["Greatsword","Staff","Scimitar","bow","beer mug","katana","waraxe","warhammer","Magic Staff","Hidden blade"]
 weaponATKstats = [4,3,3,2,2,3,4,4,3,3]
 for cokelines in Classes :
@@ -187,7 +188,7 @@ temporary = 1
 potions = 0
 #def battle(characterStats are first four parmeters,enemie stats are the other three)
 # a =characteratk, b = characterDef, c = characterhp, d = character spd, e = enemie atk, h = crit chance f = enemie hp, g = enemie spd 2 chages = 1 sp attack which is 3a 
-def battle(a,b,c,d,h,e,f,g,potions):
+def battle(a,b,c,d,h,e,f,g,potions,money1):
   clear()
   enemieCharge = 0
   charge = 0
@@ -250,8 +251,11 @@ def battle(a,b,c,d,h,e,f,g,potions):
       #enemie turn -----------------------------------------------------------
       if f <= 0 :
         print("You didn't lose")
+        addition = random.randint(3,10)
+        print("You earned $",addition)
+        money1 = money1 + addition
         input("Press enter to continue")
-        return(c,potions)
+        return(c,potions,money1)
       if enemieTurn == 1 :
         chance = random.randint(1,15)
         if enemieCharge == 2 :
@@ -292,8 +296,11 @@ def battle(a,b,c,d,h,e,f,g,potions):
     while f > 0 or c > 0 :
       if f <= 0 :
         print("You didn't lose")
+        addition = random.randint(3,10)
+        print("You earned $",addition)
+        money1 = money1 + addition
         input("Press enter to continue")
-        return(c,potions)
+        return(c,potions,money1)
       enemieTurn = random.randint(1,3)
       if enemieTurn == 1 :
         chance = random.randint(1,15)
@@ -389,5 +396,7 @@ potions1 = battleresult[1]
 characterHP = battleresult[0]
 print("you have ",potions1," potions")
 print("You have ",characterHP, "HP")
+money = battleresult[2]
+print("You have $",money)
 #we can start the story
 #battle system is complete
