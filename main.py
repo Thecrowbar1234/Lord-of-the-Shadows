@@ -388,6 +388,6 @@ battleresult = battle(characterATK,characterDEF,characterHP,characterSPD,charact
 potions1 = battleresult[1]
 characterHP = battleresult[0]
 print("you have ",potions1," potions")
-print("")
+print("You have ",characterHP, "HP")
 #we can start the story
 #battle system is complete
