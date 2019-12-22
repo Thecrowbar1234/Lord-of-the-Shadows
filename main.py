@@ -393,7 +393,7 @@ def battle(a,b,c,d,h,e,f,g,potions,money1):
       input("Press enter to continue")
       clear()
       enemieTurn = random.randint(1,3)
-battleresult = battle(characterATK,characterDEF,characterHP,characterSPD,characterCritChance,enemieATK,enemieHP,enemieSPD,potions1)
+battleresult = battle(characterATK,characterDEF,characterHP,characterSPD,characterCritChance,enemieATK,enemieHP,enemieSPD,potions1,money)
 potions1 = battleresult[1]
 characterHP = battleresult[0]
 print("you have ",potions1," potions")
