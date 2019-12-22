@@ -12,6 +12,8 @@ elif Character_Name == 'Jacob Peters' :
   Character_Name = 'Phillip'
 elif Character_Name == 'Kevin Xu' :
   Character_Name = 'Kevin the god of this world, the greatest person that ever existed'
+elif Character_Name == 'Matthew Walley' :
+  Character_Name = 'Matthew the Arbiter of justice in this world'
 elif Character_Name == 'Edward Elric' :
   Character_Name = 'Fullmetal Alchemist'
 elif Character_Name == 'Evil' :
