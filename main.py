@@ -117,7 +117,10 @@ characterStats = [characterATK," attack,",characterDEF," defense,",characterHP,"
 weapon = (Weapons[weaponID])
 weaponATK = (weaponATKstats[weaponID])
 print("Your name is ",Character_Name)
-print('your class is a ' , characterClass)
+if characterClassNum == 10 or characterClassNum == 3 :
+  print('your class is an ' , characterClass)
+else :
+  print("Your class is a ",characterClass)
 print("You have",characterStats)
 print("Your weapon is a ",weapon,", it does ",weaponATK," damage.")
 originalATK = characterATK
